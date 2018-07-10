@@ -1,0 +1,20 @@
+练习案例：
+	今日一刻
+	项目结构
+		public ---公共文件夹，用于存放共用的东西
+					js:别人提供的JS，入jQuery，angularJS
+					css:如bootstrap
+					imgs:用户注册时默认的头像
+					fonts:字体
+
+		uploads ---上传文件
+
+		scripts ---自己定义的JS脚本文件
+
+		views	---保存所有的视图
+
+		index.html
+
+
+1.根据上面的案例调整原文件的路径关系
+2.将案例文件夹初始化为本地仓库
