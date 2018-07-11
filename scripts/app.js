@@ -2,10 +2,11 @@
 * @Author: ck
 * @Date:   2018-07-10 15:59:23
 * @Last Modified by:   ck
-* @Last Modified time: 2018-07-10 17:07:44
+* @Last Modified time: 2018-07-11 17:17:57
 */
 //创建app应用模块
-var yike = angular.module("yike",[]);
+//调用控制器模块，在依赖中写上控制器模块的名称
+var yike = angular.module("yike",["Controller","ngRoute"]);
 /*
 run方法在模块创建完成之后会直接执行
  */
@@ -40,4 +41,24 @@ yike.run(["$rootScope",function($rootScope){
 			}
 		}
 	}
+}])
+
+
+// 配置路由
+yike.config(["$routeProvider",function($routeProvider){
+	$routeProvider.when("/",{
+		redirectTo:"/index"//跳转到index页面
+	}).when("/index",{
+		templateUrl:"./views/list.html",
+		controller:"indexCtrl"
+	}).when("/older",{
+		templateUrl:"./older.html",
+		controller:"olderCtrl"
+	}).when("/author",{
+		templateUrl:"./author.html",
+		controller:"authorCtrl"
+	}).when("/category",{
+		templateUrl:"./category.html",
+		controller:"categoryCtrl"
+	})
 }])
